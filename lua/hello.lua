@@ -1,0 +1,1 @@
+ngx.say("<p>你好，hello, world from Lua file!!</p>");

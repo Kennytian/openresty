@@ -1,0 +1,13 @@
+version: '3.9'
+services:
+  openresty:
+    image: openresty/openresty:1.19.9.1-10-alpine-fat
+    container_name: ${container_name}
+    env_file:
+      - .env
+    ports:
+      - "${port}:80"
+    restart: ${restart}
+    volumes:
+      - ./conf.d:/etc/nginx/conf.d:ro
+      - ./lua:/usr/local/openresty/nginx/lua:ro
