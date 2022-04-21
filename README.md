@@ -77,3 +77,8 @@ ngx.say(digest);
     content_by_lua_file lua/random-string.lua;
 }
 ```
+
+8、调试 lua 配置
+```shell
+docker exec -it openresty /usr/local/openresty/bin/openresty -s reload
+```
