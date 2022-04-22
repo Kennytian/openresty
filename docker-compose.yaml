@@ -1,7 +1,7 @@
 version: '3.9'
 services:
   openresty:
-    image: openresty/openresty:1.19.9.1-10-alpine-fat
+    image: openresty/openresty:1.19.9.1-10-alpine
     container_name: ${container_name}
     env_file:
       - .env

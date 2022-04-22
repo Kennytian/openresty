@@ -6,6 +6,7 @@ local redis_host = '192.168.80.3';
 red:set_timeouts(1000, 1000, 1000) -- 1 sec
 
 -- 通过 docker network connect redis-commander_default openresty 才能连接另一个 Docker 里的 redis
+-- docker network connect redis-commander_default openresty
 local ok, err = red:connect(redis_host, 6379)
 
 if not ok then
