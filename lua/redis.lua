@@ -1,10 +1,12 @@
+-- https://github.com/openresty/lua-resty-redis
 local redis = require "resty.redis"
 local red = redis:new()
+local redis_host = '192.168.80.3';
 
 red:set_timeouts(1000, 1000, 1000) -- 1 sec
 
 -- 通过 docker network connect redis-commander_default openresty 才能连接另一个 Docker 里的 redis
-local ok, err = red:connect("192.168.80.2", 6379)
+local ok, err = red:connect(redis_host, 6379)
 
 if not ok then
     ngx.say("failed to connect: ", err)
@@ -20,7 +22,9 @@ end
 ngx.say("set result: ", ok)
 
 local res, err = red:get("dog")
-if not res then
+ngx.say("dog err: ", err, err==nil);
+
+if err then
     ngx.say("failed to get dog: ", err)
     return
 end
@@ -48,10 +52,10 @@ for i, res in ipairs(results) do
         if res[1] == false then
             ngx.say("failed to run command ", i, ": ", res[2])
         else
-            -- process the table value
+            ngx.say('table index:', i, ', value:', res);
         end
     else
-        -- process the scalar value
+        ngx.say('res not equal table value:', res);
     end
 end
 
