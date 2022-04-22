@@ -9,3 +9,10 @@ ngx.say('ngx.now() value is:' .. ngx.now());
 ngx.sleep(1);
 ngx.say('ngx elapsed value is:' .. (ngx.now() - startTime) .. 's');
 ngx.say('ngx.localtime() value is:' .. ngx.localtime());
+ngx.say('ngx.utctime() value is:' .. ngx.utctime());
+ngx.say('ngx.http_time(startTime) value is:' .. ngx.http_time(startTime));
+ngx.say('ngx.req.http_version() value is:' .. ngx.req.http_version());
+ngx.print('ngx.req.raw_header() value is:' .. ngx.req.raw_header())
+ngx.say('ngx.req.raw_header() value is:' .. ngx.req.raw_header(true));
+ngx.say('ngx.today() value is:' .. ngx.today());
+ngx.say('ngx.time() value is:' .. ngx.time());
