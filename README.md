@@ -52,6 +52,8 @@ services:
 
 6、编写 lua 文件
 
+> OpenResty 文档 https://openresty-reference.readthedocs.io/en/latest/Lua_Nginx_API/
+
 `lua/hello.lua`
 ```lua
 ngx.say("<p>你好，hello, world from Lua file!!</p>");

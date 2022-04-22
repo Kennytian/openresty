@@ -5,6 +5,8 @@ services:
     container_name: ${container_name}
     env_file:
       - .env
+    environment:
+      - TZ=Asia/Shanghai
     ports:
       - "${port}:80"
     restart: ${restart}

@@ -1,1 +1,11 @@
+local startTime = ngx.req.start_time();
 ngx.say("<p>你好，hello, world from Lua file!!</p>");
+ngx.say('ngx.HTTP_GET value is:' .. ngx.HTTP_GET);
+ngx.say('ngx.HTTP_POST value is:' .. ngx.HTTP_POST);
+ngx.say('ngx.OK value is:' .. ngx.OK);
+ngx.say('ngx.DONE value is:' .. ngx.DONE);
+ngx.say('ngx.req.start_time() value is:' .. ngx.req.start_time());
+ngx.say('ngx.now() value is:' .. ngx.now());
+ngx.sleep(1);
+ngx.say('ngx elapsed value is:' .. (ngx.now() - startTime) .. 's');
+ngx.say('ngx.localtime() value is:' .. ngx.localtime());
