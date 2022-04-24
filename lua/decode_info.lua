@@ -1,5 +1,5 @@
 -- curl -i --data 'info=eyJ1c2VyLWFnZW50IjoibWFjT1MiLCAiaW5mbyI6IkhlbGxvLCDkuK3lm70iLCAiaXAiOiIxOTIuMTY4LjEuMSJ9' http://localhost:8084/decode
-
+ngx.header['server'] = 'secret';
 local json = require "cjson";
 
 ngx.req.read_body();

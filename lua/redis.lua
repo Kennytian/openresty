@@ -1,4 +1,5 @@
 -- https://github.com/openresty/lua-resty-redis
+ngx.header['server'] = 'secret';
 local redis = require "resty.redis"
 local red = redis:new()
 local redis_host = '192.168.80.3';

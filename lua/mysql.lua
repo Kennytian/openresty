@@ -1,3 +1,4 @@
+ngx.header['server'] = 'secret';
 local mysql = require('resty.mysql');
 local cjson = require "cjson"
 
@@ -59,4 +60,5 @@ if not ok then
 end
 -- ngx.header['Content-Type'] = 'application/json; charset=utf-8';
 ngx.say(cjson.encode(ok));
+return ngx.exit(ngx.HTTP_OK)
 

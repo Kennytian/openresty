@@ -1,3 +1,4 @@
+ngx.header['server'] = 'secret';
 local startTime = ngx.req.start_time();
 ngx.say("<p>你好，hello, world from Lua file!!</p>");
 ngx.say('ngx.HTTP_GET value is:' .. ngx.HTTP_GET);
